@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formulario de Selección</title>
+</head>
+<body>
+    <form id="miFormulario">
+        <h2>Selecciona 3 elementos:</h2>
+        <label for="elemento1"><input type="checkbox" id="elemento1" name="elemento" value="Elemento 1"> Elemento 1</label><br>
+        <label for="elemento2"><input type="checkbox" id="elemento2" name="elemento" value="Elemento 2"> Elemento 2</label><br>
+        <label for="elemento3"><input type="checkbox" id="elemento3" name="elemento" value="Elemento 3"> Elemento 3</label><br>
+        <label for="elemento4"><input type="checkbox" id="elemento4" name="elemento" value="Elemento 4"> Elemento 4</label><br>
+        <label for="elemento5"><input type="checkbox" id="elemento5" name="elemento" value="Elemento 5"> Elemento 5</label><br>
+        <!-- Agrega las demás casillas de verificación aquí -->
+
+        <button type="button" onclick="validarSeleccion()">Enviar</button>
+    </form>
+
+    <script>
+        var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        var maxSeleccionados = 3;
+
+        function validarSeleccion() {
+            var seleccionados = Array.from(checkboxes).filter(checkbox => checkbox.checked);
+            if (seleccionados.length < maxSeleccionados) {
+                alert(`Debes seleccionar al menos ${maxSeleccionados} elementos.`);
+            } else {
+                document.getElementById("miFormulario").submit(); // Envía el formulario si se cumple la condición
+            }
+        }
+    </script>
+</body>
+</html>

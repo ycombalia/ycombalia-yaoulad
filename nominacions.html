@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ca">
+    <head>
+        <!--Informació per al navegador-->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CritiCine</title>
+        <!--Enllaços dels arxius CSS i JavaScript-->
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <script src="JavaScript/java.js"></script>
+        <!--Favicon de la pàgina web-->
+        <link rel="icon" type="image/x-icon" href="fotos/altres/favicon.ico">
+    </head>
+    <body class="noMargPad">
+        <!--Capçalera igual en tots els documents-->
+        <header class="noMarPad">
+            <h1>CritiCine</h1>
+        </header>
+        <!--Menú de les pàgines-->
+        <nav id="menuNav">
+            <ul class="noMargPad">
+                <li>
+                    <a href="index.html">Inici</a>
+                </li>
+                <li class="actiu nominacions">
+                    <a href="#nominacions">Nominacions 2023</a>
+                    <!--Submenú de les nominacións, normalment estarà 'amagat'-->
+                    <ul id="menuDesplegable" class="noMargPad">
+                        <li>
+                            <a href="#nominacionsPelis">Pel·lícules</a>
+                        </li>
+                        <li>
+                            <a href="#nominacionsSeries">Sèries</a>
+                        </li>
+                        <li>
+                            <a href="#nominacionsActors">Actors i actrius</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="votacions.html">Votacions</a>
+                </li>
+            </ul>
+        </nav>
+        <!--Cos de la pàgina-->
+        <main>
+            <section id="nominacions">
+                <h2>NOMINACIONS</h2>
+                <!--PEL·LÍCULES-->
+                <article id="nominacionsPelis">
+                    <h3>Premi a la millor pel·lícula de l'any</h3>
+                    <!--Nominació 1-->
+                    <article>
+                        <img src="fotos/pelicules/barbie.jpg" alt="Barbie" title="Barbie" class="imatgesNominacions">
+                        <div class="overlay">
+                            <div class="text">
+                                <h3>Barbie per Greta Gerwig</h3>
+                                <p>Comèdia i fantasia</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!--Nominació 2-->
+                    <article>
+                        <img src="fotos/pelicules/oppenheimer.jpg" alt="Oppenheimer" title="Oppenheimer" class="imatgesNominacions">
+                        <div class="overlay">
+                            <div class="text">
+                                <h3>Oppenheimer per Christopher Nolan</h3>
+                                <p>Història</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!--Nominació 3-->
+                    <article>
+                        <img src="fotos/pelicules/insidious.jpg" alt="Insidious" title="Insidious" class="imatgesNominacions">
+                        <div class="overlay">
+                            <div class="text">
+                                <h3>Insidious: The Red Door per Patrick Wilson</h3>
+                                <p>Terror</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!--Nominació 4-->
+                    <article>
+                        <img src="fotos/pelicules/elemental.jpg" alt="Elemental"  title="Elemental" class="imatgesNominacions">
+                        <div class="overlay">
+                            <div class="text">
+                                <h3>Elemental per Peter Sohn</h3>
+                                <p>Animació i aventures</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!--Nominació 5-->
+                    <article>
+                        <img src="fotos/pelicules/transformers.jpeg" alt="Transformers: Rise of the Beasts" title="Transformers: Rise of the Beasts" class="imatgesNominacions">
+                        <div class="overlay">
+                            <div class="text">
+                                <h3>Transformers: Rise of the beasts</h3>
+                                <p>Acció i ciència ficció</p>
+                            </div>
+                        </div>
+                    </article>
+                </article>
+
+                <hr>
+
+                <!--SÈRIES-->
+                <article id="nominacionsSeries">
+                    <h3>Premi a la millor sèrie de l'any</h3>
+                    <!--Nominació 1-->
+                    <article>
+                        <img src="fotos/series/1murders.jpg" alt="Only Murders in The Building"  title="Only Murders in The Building" class="imatgesNominacions">
+                        <div class="overlay">
+                            <div class="text">
+                                <h3>Only Murders in The Building</h3>
+                                <p>Temporada 3<br>Misteri i comèdia</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!--Nominació 2-->
+                    <article>
+                        <img src="fotos/series/2you.jpg" alt="You"  title="You" class="imatgesNominacions">
+                        <div class="overlay">
+                            <div class="text">
+                                <h3>You</h3>
+                                <p>Temporada 4<br>Thriller psicològic</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!--Nominació 3-->
+                    <article>
+                        <img src="fotos/series/3thelastofus.jpg" alt="The Last of Us"  title="The Last of Us" class="imatgesNominacions">
+                        <div class="overlay">
+                            <div class="text">
+                                <h3>The Last of Us</h3>
+                                <p>Drama apocalíptic</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!--Nominació 4-->
+                    <article>
+                        <img src="fotos/series/4beef.jpg" alt="Beef"  title="Beef" class="imatgesNominacions">
+                        <div class="overlay">
+                            <div class="text">
+                                <h3>Beef</h3>
+                                <p>Comèdia</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!--Nominació 5-->
+                    <article>
+                        <img src="fotos/series/5onepiece.jpg" alt="One Piece"  title="One Piece" class="imatgesNominacions">
+                        <div class="overlay">
+                            <div class="text">
+                                <h3>One Piece</h3>
+                                <p>Aventura i fantasia</p>
+                            </div>
+                        </div>
+                    </article>
+                </article>
+
+                <hr>
+
+                <article id="nominacionsActors">
+                    <h3>Premi al millor actor o actriu de l'any</h3>
+                    <!--Nominació 1-->
+                    <article>
+                        <img src="fotos/actors/1margot.jpg" alt="Margot Robbie" title="Margot Robbie" class="imatgesNominacions">
+                        <div class="overlay">
+                            <div class="text">
+                                <h3>Margot Robbie</h3>
+                                <p>Barbie</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!--Nominació 2-->
+                    <article>
+                        <img src="fotos/actors/3cillian.jpg" alt="Cillian Murphy" title="Cillian Murphy" class="imatgesNominacions">
+                        <div class="overlay">
+                            <div class="text">
+                                <h3>Cillian Murphy</h3>
+                                <p>Oppenheimer</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!--Nominació 3-->
+                    <article>
+                        <img src="fotos/actors/5ty.jpg" alt="Ty Simpkins" title="Ty Simpkins" class="imatgesNominacions">
+                        <div class="overlay">
+                            <div class="text">
+                                <h3>Ty Simpkins</h3>
+                                <p>Insidious: The Red Door</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!--Nominació 4-->
+                    <article>
+                        <img src="fotos/actors/7leah.jpg" alt="Leah Lewis" title="Leah Lewis" class="imatgesNominacions">
+                        <div class="overlay">
+                            <div class="text">
+                                <h3>Leah Lewis</h3>
+                                <p>Elemental</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!--Nominació 5-->
+                    <article>
+                        <img src="fotos/actors/9anthony.jpg" alt="Anthony Ramos" title="Anthony Ramos" class="imatgesNominacions">
+                        <div class="overlay">
+                            <div class="text">
+                                <h3>Anthony Ramos</h3>
+                                <p>Transformers: Rise of the beasts</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!--Nominació 6-->
+                    <article>
+                        <img src="fotos/actors/11selena.jpg" alt="Selena Gomez" title="Selena Gomez" class="imatgesNominacions">
+                        <div class="overlay">
+                            <div class="text">
+                                <h3>Selena Gomez</h3>
+                                <p>Only Murders in the Building</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!--Nominació 7-->
+                    <article>
+                        <img src="fotos/actors/12penn.jpg" alt="Penn Badgley" title="Penn Badgley" class="imatgesNominacions">
+                        <div class="overlay">
+                            <div class="text">
+                                <h3>Penn Badgley</h3>
+                                <p>You</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!--Nominació 8-->
+                    <article>
+                        <img src="fotos/actors/13bella.jpg" alt="Bella Ramsey" title="Bella Ramsey" class="imatgesNominacions">
+                        <div class="overlay">
+                            <div class="text">
+                                <h3>Bella Ramsey</h3>
+                                <p>The Last of Us</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!--Nominació 9-->
+                    <article>
+                        <img src="fotos/actors/14steven.jpg" alt="Steven Yeun" title="Steven Yeun" class="imatgesNominacions">
+                        <div class="overlay">
+                            <div class="text">
+                                <h3>Steven Yeun</h3>
+                                <p>Beef</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!--Nominació 10-->
+                    <article>
+                        <img src="fotos/actors/15inaki.jpg" alt="Iñaki Godoy" title="Iñaki Godoy" class="imatgesNominacions">
+                        <div class="overlay">
+                            <div class="text">
+                                <h3>Iñaki Godoy</h3>
+                                <p>One Piece</p>
+                            </div>
+                        </div>
+                    </article>
+                </article>
+            </section>
+        </main>
+        <footer>
+            <!--Informació de les autores del projecte-->
+            <p>© Fet per Yuqin Combalia i Yasmin Aoulad. DAM1 - M04. Projecte Web</p>
+        </footer>
+    </body>
+</html>

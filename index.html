@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ca">
+    <head>
+        <!--Informació per al navegador-->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CritiCine</title>
+        <!--Enllaços dels arxius CSS i JavaScript-->
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <!--Favicon de la pàgina web-->
+        <link rel="icon" type="image/x-icon" href="fotos/altres/favicon.ico">
+    </head>
+    <body class="noMargPad">
+        <!--Capçalera igual en tots els documents-->
+        <header class="noMarPad">
+            <h1>CritiCine</h1>
+        </header>
+        <!--Menú de les pàgines-->
+        <nav id="menuNav">
+            <ul class="noMargPad">
+                <li class="actiu">
+                    <a href="index.html">Inici</a>
+                </li>
+                <li class="nominacions">
+                    <a href="nominacions.html">Nominacions 2023</a>
+                    <!--Submenú de les nominacions, normalment estarà 'amagat'-->
+                    <ul id="menuDesplegable" class="noMargPad">
+                        <li>
+                            <a href="nominacions.html#nominacionsPelis">Pel·lícules</a>
+                        </li>
+                        <li>
+                            <a href="nominacions.html#nominacionsSeries">Sèries</a>
+                        </li>
+                        <li>
+                            <a href="nominacions.html#nominacionsActors">Actors i actrius</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="votacions.html">Votacions</a>
+                </li>
+            </ul>
+        </nav>
+        <!--Cos de la pàgina-->
+        <main>
+            <!--Una petita presentació dels premis-->
+            <section>
+                <h2>Qui som?</h2>
+                <p>Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.</p>
+            </section>
+            <!--Contingut dels premis entregats en les edicions anteriors-->
+            <section id="edicions">
+                <h2>EDICIONS</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th colspan="2">EDICIÓ 2021</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="col1">Premi a la millor pel·lícula</td>
+                            <td>The Unforgivable, per Nora Fingscheidt</td>
+                        </tr>
+                        <tr>
+                            <td class="col1">Premi a la millor sèrie</td>
+                            <td>Squid Game, per Hwang Dong-hyuk</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="3" class="col1">Premi als millors actors i actrius</td>
+                            <td><b>Yvonne Strahovski</b>, a The Handmaid's Tale</td>
+                        </tr>
+                        <tr>
+                            <td><b>Benedict Cumberbatch</b>, a The Power of the Dog</td>
+                        </tr>
+                        <tr>
+                            <td><b>Margaret Qualley</b>, a Maid</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th colspan="2">EDICIÓ 2022</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><!--Files-->
+                            <td class="col1">Premi a la millor pel·lícula</td><!--Columnes-->
+                            <td>Everything Everywhere All At Once, per  Daniel Kwan i Daniel Scheinert</td>
+                        </tr>
+                        <tr>
+                            <td class="col1">Premi a la millor sèrie</td>
+                            <td>Stranger Things, per Shawn Levy, Matt Duffer i Ross Duffer</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="3" class="col1">Premi als millors actors i actrius</td>
+                            <td><b>Brendan Fraser</b>, a The Whale</td>
+                        </tr>
+                        <tr>
+                            <td><b>Jenna Ortega</b>, a Wednesday</td>
+                        </tr>
+                        <tr>
+                            <td><b>Paul Mescal</b>, a Aftersun</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <!--Galeria de fotos de les edicions anteriors-->
+            <section>
+                <h2>Galeria d'imatges</h2>
+                <div class="carrusel">
+                    <div class="imatges">
+                        <p class="ordre">The Unforgivable - 2021</p>
+                        <img src="fotos/edicions/2021peli.jpg" title="The Unforgivable, per Nora Fingscheidt" alt="The Unforgivable, per Nora Fingscheidt" style="width:100%" onclick="mostrarContingut()">
+                    </div>
+
+                    <div class="imatges">
+                        <p class="ordre">Squid Game - 2021</p>
+                        <img src="fotos/edicions/2021serie.webp" title="Squid Game, per Hwang Dong-hyuk" alt="Squid Game, per Hwang Dong-hyuk" style="width:100%" onclick="mostrarContingut()">
+                    </div>
+
+                    <div class="imatges">
+                        <p class="ordre">Yvonne Strahovski, a The Handmaid's Tale - 2021</p>
+                        <img src="fotos/edicions/2021yvonne.jpg" title="Yvonne Strahovski, a The Handmaid's Tale" alt="Yvonne Strahovski, a The Handmaid's Tale" style="width:100%" onclick="mostrarContingut()">
+                    </div>
+
+                    <div class="imatges">
+                        <p class="ordre">Benedict Cumberbatch, a The Power of the Dog - 2021</p>
+                        <img src="fotos/edicions/2021benedict.jpg" title="Benedict Cumberbatch, a The Power of the Dog" alt="Benedict Cumberbatch, a The Power of the Dog" style="width:100%" onclick="mostrarContingut()">
+                    </div>
+                    <div class="imatges">
+                        <p class="ordre">Margaret Qualley, a Maid - 2021</p>
+                        <img src="fotos/edicions/2021margaret.jpg" title="Margaret Qualley, a Maid" alt="Margaret Qualley, a Maid" style="width:100%" onclick="mostrarContingut()">
+                    </div>
+
+                    <div class="imatges">
+                        <p class="ordre">Everything Everywhere All At Once - 2022</p>
+                        <img src="fotos/edicions/2022peli.jpg" title="Everything Everywhere All At Once, per  Daniel Kwan i Daniel Scheinert" alt="Everything Everywhere All At Once, per  Daniel Kwan i Daniel Scheinert" style="width:100%" onclick="mostrarContingut()">
+                    </div>
+
+                    <div class="imatges">
+                        <p class="ordre">Stranger Things - 2022</p>
+                        <img src="fotos/edicions/2022serie.jpg" title="Stranger Things, per Shawn Levy, Matt Duffer i Ross Duffer" alt="Stranger Things, per Shawn Levy, Matt Duffer i Ross Duffer" style="width:100%" onclick="mostrarContingut()">
+                    </div>
+
+                    <div class="imatges">
+                        <p class="ordre">Brendan Fraser, a The Whale - 2022</p>
+                        <img src="fotos/edicions/2022brendan.jpg" title="Brendan Fraser, a The Whale" alt="Brendan Fraser, a The Whale" style="width:100%" onclick="mostrarContingut()">
+                    </div>
+
+                    <div class="imatges">
+                        <p class="ordre">Jenna Ortega, a Wednesday - 2022</p>
+                        <img src="fotos/edicions/2022jenna.jpg" title="Jenna Ortega, a Wednesday" alt="Jenna Ortega, a Wednesday" style="width:100%" onclick="mostrarContingut()">
+                    </div>
+                    <div class="imatges">
+                        <p class="ordre">Paul Mescal, a Aftersun - 2022</p>
+                        <img src="fotos/edicions/2021margaret.jpg" title="Paul Mescal, a Aftersun" alt="Paul Mescal, a Aftersun" style="width:100%" onclick="mostrarContingut()">
+                    </div>
+                    <!--Botons de control del carrusel-->
+                    <button class="anterior" onclick="canviImatge(-2)">&#10094;</button>
+                    <button class="seguent" onclick="canviImatge(0)">&#10095;</button>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <!--Informació de les autores-->
+            <p>© Fet per Yuqin Combalia i Yasmin Aoulad. DAM1 - M04. Projecte Web</p>
+        </footer>
+        <script src="JavaScript/java.js"></script>
+    </body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ca">
+    <head>
+        <!--Informació per al navegador-->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CritiCine</title>
+        <!--Enllaços dels arxius CSS i JavaScript-->
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <script src="JavaScript/java.js"></script>
+        <!--Favicon de la pàgina web-->
+        <link rel="icon" type="image/x-icon" href="fotos/altres/favicon.ico">
+    </head>
+    <body class="noMargPad">
+        <!--Capçalera igual en tots els documents-->
+        <header class="noMarPad">
+            <h1>CritiCine</h1>
+        </header>
+        <!--Menú de les pàgines-->
+        <nav id="menuNav">
+            <ul class="noMargPad">
+                <li class="actiu">
+                    <a href="index.html">Inici</a>
+                </li>
+                <li class="nominacions">
+                    <a href="nominacions.html">Nominacions 2023</a>
+                    <!--Submenú de les nominacions, normalment estarà 'amagat'-->
+                    <ul id="menuDesplegable" class="noMargPad">
+                        <li>
+                            <a href="nominacions.html#nominacionsPelis">Pel·lícules</a>
+                        </li>
+                        <li>
+                            <a href="nominacions.html#nominacionsSeries">Sèries</a>
+                        </li>
+                        <li>
+                            <a href="nominacions.html#nominacionsActors">Actors i actrius</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="votacions.html">Votacions</a>
+                </li>
+            </ul>
+        </nav>
+        <!--Cos de la pàgina-->
+        <main>
+            <!--Pàgina per donar gràcies i confirmació de la votació-->
+            <h2>Gràcies per la seva votació!</h2>
+            <p>Confirmem que hem rebut els seus vots.</p>
+        </main>
+        <footer>
+            <!--Informació de les autores-->
+            <p>© Fet per Yuqin Combalia i Yasmin Aoulad. DAM1 - M04. Projecte Web</p>
+        </footer>
+    </body>
+</html>

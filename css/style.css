@@ -1,0 +1,496 @@
+/*
+Colors aplicats:
+lilafort: #3f3f73
+lilafluix: #5a5c90
+grislilos: #9a9db5
+groc: #f7e359
+*/
+
+/*_____________________________STYLES GENERALS(S'apliquen a totes les pàgines; header, nav...)_________________________*/
+*{
+    box-sizing: border-box;
+    letter-spacing: 0.3vh;
+    scroll-behavior:smooth;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+body{
+    background-color:#9a9db5;
+}
+
+/*Capçalera: igual en totes les pàgines*/
+header{
+    background-color:#3f3f73;
+    width:100%;
+}
+
+h1{
+    margin:0;
+    text-align:center;
+    padding:4vh;
+    font-size:5vw;
+    font-family:"Cinema";
+    letter-spacing:4px;
+    animation: 5s cubic-bezier(.25, 1, .30, 1) efecteDiamant both; /*Animació*/
+}
+
+/*Font descarregada, només està aplicada al h1*/
+@font-face{
+    font-family:"Cinema";
+    src: url(Cinerama.otf);
+}
+
+/*Animació d'entrada per al H1*/
+@keyframes efecteDiamant {
+  from {
+    clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%);
+  }
+  to {
+    clip-path: polygon(-50% 50%, 50% -50%, 150% 50%, 50% 150%);
+  }
+}
+
+/*Classe -> sense margin ni padding*/
+.noMargPad{
+    margin:0;
+    padding:0;
+}
+
+/*Color dels elements header i h2, footer*/
+header, h2, footer{
+    color: #f7e359;
+}
+
+/*En totes les pàgines el h2 estarà alineat al mitg*/
+h2 {
+    font-size: 4vh;
+    text-align:center;
+}
+
+/*Decoració dels h3 - per a diferenciarlos de les p, aniran subratllats*/
+#politPriv h3{
+    text-decoration:underline;
+}
+
+/*Tots els pàragrafs i h3 tindran la mateixa mida*/
+h3, p{
+    font-size: 4vh;
+}
+
+/*Menú de navegació:
+sticky, quan es baixi per la pàgina, el menú es quedara 'enganxat' a la part superior de la finestra del navegador ficant-li top:0;
+z-index, per a que sempre es veigi per sobre els altres elements,*/
+nav{
+    position:sticky;
+    z-index:1;
+    top:0;
+    width:100%;
+    text-align:center;
+}
+
+/*Menú de navegació i el submenú de nominacions*/
+nav ul{
+    list-style-type:none;
+    width:100%;
+    text-transform:uppercase;
+    letter-spacing:0.2vh;
+}
+
+/*Menú de navegació principal: Inici, Nominacions i votació*/
+ul:first-child{
+    display:flex;
+    flex-direction:row;
+    border-top:0.3vh solid #f7e359;
+}
+
+/*Elements dels menús*/
+ul li{
+    width:100%;
+    background-color:#3f3f73;
+}
+
+nav a{
+    display:block;
+    text-decoration:none;
+    color:#f7e359;
+    padding:2vh;
+}
+
+/*Submenú de nominacions (pel·lícules, sèries i actors) -> no serà visible, pero ja li donem un z-index:1; per a que ja estigui a davant de tot*/
+ul ul{
+    display:none;
+    z-index: 1;
+    background-color:#3f3f73;
+    width:33.33%;
+}
+
+/*Submenú visible quan se li passi el ratolí per sobre*/
+.nominacions:hover #menuDesplegable{
+    position:absolute;
+    display:block;
+}
+
+/*Classe que indicarà en el menú en quina pàgina estem*/
+/*Canvi de color quan es passa per sobre un element del menú i submenú*/
+.actiu, a:hover{
+    background-color:#5a5c90;
+}
+
+/*Element que també serà igual en totes les pàgines*/
+footer{
+    text-align:center;
+    background-color:#3f3f73;
+    padding:2%;
+}
+
+/*____________________________________________COS DEL HTML___________________________________________*/
+
+/*Cos del document - també serà igual en totes les pàgines*/
+main{
+    background-color:#5a5c90;
+    width:80%;
+    padding:10vh;
+    margin:5% 10%;
+    border-radius:20px;
+    box-shadow: 0px 0px 10px 2px #000000;
+}
+
+/*__________________________________________STYLE DEL INDEX.HTML_________________________________________*/
+/*Taula guanyadors d'altres edicions*/
+table{
+    margin:7vh auto;
+    background-color: rgba(240, 248, 255, 0.432);
+    width:70%;
+    border-collapse:collapse;
+}
+
+/*Color de fons de la primera,fila*/
+thead{
+    background-color:#3f3f73ee;
+}
+
+/*Style de la primera columna*/
+.col1{
+    background-color: rgba(116, 104, 143, 0.797);
+}
+
+th, td{
+    padding:2vh;
+    border:solid rgba(0, 0, 0, 0.479) 0.3vh;                
+}
+
+/*Galeria d'imatges -> Carrusel*/
+
+/*Contenidor del carrusel*/
+.carrusel{
+    max-width:80%;
+    position:relative;
+    margin:auto;
+}
+
+/*Amaga els contenidors: on hi ha la imatge i el seu ordre*/
+.imatges{
+    display:none;
+    width:100%;
+}
+
+/*Mida de les fotos i alineació*/
+.imatges img{
+    vertical-align:middle;
+    height:50vh;
+    width:auto;
+    object-fit:cover;
+}
+
+/*Botons per avançar i retrocedir*/
+.anterior, .seguent{
+    cursor:pointer;
+    position:absolute;
+    top:50%;
+    width:auto;
+    padding:10px;
+    margin-top:-22px;
+    color:white;
+    font-weight:bold;
+    font-size:16px;
+    border-radius: 0 3px 3px 0;
+    background-color:rgba(1,1,1,0.5);
+}
+
+/*Botó per avançar*/
+.seguent {
+    right:0;
+    border-radius: 3px 0 0 3px;
+}
+
+/*Números que indican l'ordre*/
+.ordre{
+    color:#f7e359;
+    font-size:20px;
+    padding:8px 12px;
+    position:absolute;
+    bottom:0;
+    background-color:#3f3f73;
+}
+
+
+/*_________________________________________STYLE DEL NOMINACIONS.HTML______________________________________*/
+#nominacionsPelis, #nominacionsSeries, #nominacionsActors{
+    justify-content:center;
+}
+
+#nominacionsPelis h3, #nominacionsSeries h3, #nominacionsActors h3{
+    padding-top:7vh;
+}
+
+/*Fotos de les nominacions*/
+#nominacions img{
+    padding:2%;
+    width:100%;
+    height:auto;
+    background-color:#9a9db5;
+    border-radius:1vh;
+}
+
+#nominacionsActors article {
+    width: 30%;
+}
+
+/*Contenidors de les nominacions(pelis, sèries i actors)*/
+article article{
+    position: relative;
+    width:46%;
+    display:inline-flex;
+    margin:1vh;
+}
+
+/*Imatges dels contenidors de les nominacions*/
+.imatgesNominacions {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/*Capa que es desplaçarà cap abaix quan hi passis el ratolí per sobre*/
+.overlay {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    right: 0;
+    background-color: #9a9db597;
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    transition: .5s ease;
+    border-radius:1vh;
+}
+
+/*Efecte del contenidor de la informació de les nominacions*/
+article article:hover .overlay {
+    bottom: 0;
+    height: 100%;
+}
+
+/*Text del contenidor anterior*/
+.text {
+    color: white;
+    font-size: 3vh;
+    position: absolute;
+    overflow: hidden;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%); /*Per a Internet Explorer*/
+}
+
+/*Línia de separació entre: pel·lícules-sèries-actors*/
+hr{
+    width:50%;
+    margin:7vh auto;
+}
+
+/*________________________________________________STYLE DEL FORMULARI______________________________________*/
+fieldset{
+    border-color:#9a9db5;
+    margin-bottom:3vh;
+}
+
+legend {
+    font-style:italic;
+    font-size: 3vh;
+}
+
+/*Styles els input de text i email*/
+input[type="text"], input[type="email"] {
+    width: 100%;
+    padding:1.5vh;
+    border-radius: 0.8vh;
+    font-size: 2.3Vh;
+    margin:1vh;
+    background-color:#9a9db5;
+}
+
+/*Contenidors que tenen només la votació de pel·lícules i sèries*/
+form div{
+	display:flex;
+	justify-content:space-around;
+    margin:1vh auto;
+    align-content:center;
+}
+
+/*Contenidors de les imatges de votació*/
+div label{
+	height:auto;
+	width:100%;
+	margin:0.3vw;
+}
+
+/*Amaga els input type radio de les imatges*/
+input[type="radio"]{
+    visibility:hidden;
+}
+
+/*Part de votacions amb imatges*/
+label img{
+	width:100%;
+	height:auto;
+	margin:0.3vh;
+	object-fit:cover;
+}
+
+/*Quan una imatge del formulari és selecionada*/
+input[type="radio"]:checked + img {
+  border: 2px solid #f7e359;
+}
+
+/*Fa que el cursor canvi a 'pointer' quan passi pels contenidorsx*/
+div label, input[type="checkbox"] + label, input[type="checkbox"], button[type="submit"]:hover{
+    cursor: pointer;
+}
+
+/*Style del checkbox*/
+input[type="checkbox"]{
+    height: 20px;
+    width: 20px;
+    appearance:none;
+    margin-right:1.5vw;
+    background-color:#9a9db5;
+}
+
+/*Quan el checkbox estigui seleccionat, se li col·locarà una imatge de fons, centrada i no es repetirà*/
+input[type="checkbox"]:checked{
+    background-image:url(../fotos/altres/check.svg);
+    background-repeat: no-repeat;
+    background-position:center;
+}
+
+/*Quan els checkbox estiguin 'desactivats', no el cursor se'ls canviarà i el color de fons també per a que els checkbox seleccionats resaltin*/
+input[type="checkbox"]:disabled{
+    background-color:#5a5c90;
+    cursor:default;
+}
+
+/*Contenidor de l'acceptació de les Polítiques de privacitat*/
+#checkPolit{
+    padding:1vh 2vw;
+}
+
+/*Enllaç de les Polítiques de Privacitat dins del formulari*/
+form a{
+    color:#9a9db5;
+}
+
+/*Botó de enviar i reset*/
+#botons{
+    justify-content:space-around;
+}
+
+button[type="submit"]{
+    margin:1%;
+    width:100%;
+    padding:2%;
+    background-color:#9a9db5;
+    border:none;
+    border-radius:20px;
+    letter-spacing:3px;
+    font-size:2vh;
+    font-weight:bold;
+}
+
+button[type="submit"]:hover{
+    background-color:#3f3f73;
+    color:#f7e359;
+}
+
+/*CSS: mòbil*/
+@media only screen and (max-width:700px){
+    /*Mida dels titols de totes les pàgines*/
+    h1{
+        font-size:8vw;
+    }
+    
+    /*Per a que el menú es quedi a la posició original i no baixi junt amb el contingut*/
+    nav {
+        position: relative;
+    }
+    
+    /*Menú de navegació -> per a que es mostri com a un menú vertical*/
+    ul:first-child{
+        flex-direction:column;
+    }
+    
+    /*Que el submenú es desplegui*/
+    .nominacions:hover #menuDesplegable{
+        display:inline-block;
+        position:relative;
+        width:100%;
+    }
+    
+    /*Cos de l'html*/
+    main {
+        width: 100%;
+        padding: 3.5vh;
+        margin: 0;
+        border-radius: 0;
+    }
+    
+    /*Selecciona les imatges de les nominacions de pel·lícules i sèries*/
+    article article {
+        height:auto;
+        width:100%;
+        margin:0.3vw;
+    }
+    
+    /*Actors*/
+    #nominacionsActors article{
+        width:80%;
+        margin: 1vh 10%;
+    }  
+    
+    /*Contenidor de les imatges de votació*/
+    form div{
+        flex-wrap:wrap;
+    }
+    
+    /*Imatges de votació*/
+    div label{
+        height:auto;
+        width:45%;
+        margin:0.3vw;
+    }
+    
+    /*Alineament a l'inici*/
+    .votacioActors div, #checkPolit{
+        justify-content:flex-start;
+    }
+    
+    /*Label del checkbox de les politiques de privacitat*/
+    label[for="politiq"]{
+        width:80%;
+    }
+    
+    /*Botons d'eliminar i submit*/
+    button[type="submit"]{
+        width:100%;
+    }
+}

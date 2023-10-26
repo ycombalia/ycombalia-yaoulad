@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ca">
+    <head>
+        <!--Informació per al navegador-->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CritiCine</title>
+        <!--Enllaços dels arxius CSS i JavaScript-->
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <script src="JavaScript/java.js"></script>
+        <!--Favicon de la pàgina web-->
+        <link rel="icon" type="image/x-icon" href="fotos/altres/favicon.ico">
+    </head>
+    <body class="noMargPad">
+        <!--Capçalera igual en tots els documents-->
+        <header class="noMarPad">
+            <h1>CritiCine</h1>
+        </header>
+        <!--Menú de les pàgines-->
+        <nav id="menuNav">
+            <ul class="noMargPad">
+                <li>
+                    <a href="index.html">Inici</a>
+                </li>
+                <li class="nominacions">
+                    <a href="nominacions.html">Nominacions 2023</a>
+                    <!--Submenú de les nominacións, normalment estarà 'amagat'-->
+                    <ul id="menuDesplegable" class="noMargPad">
+                        <li>
+                            <a href="nominacions.html#nominacionsPelis">Pel·lícules</a>
+                        </li>
+                        <li>
+                            <a href="nominacions.html#nominacionsSeries">Sèries</a>
+                        </li>
+                        <li>
+                            <a href="nominacions.html#nominacionsActors">Actors i actrius</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="actiu">
+                    <a href="votacions.html">Votacions</a>
+                </li>
+            </ul>
+        </nav>
+        <!--Cos de la pàgina-->
+        <main>
+            <h2>VOTACIÓ</h2>
+            <p>Completa el següent formulari per a votar</p>
+            <!--Formulari de les votacions-->
+            <form method="post" id="formulari" action="gracies.html">
+                <!--Recull de dades personals-->
+                <fieldset>
+                    <legend>Dades d'usuari</legend>
+                    <label for="nomCognom">Nom i cognom</label>
+                    <input type="text" id="nomCognom" name="nomCognom" required>
+					<br>
+                    <label for="correu">Correu</label>
+                    <input type="email" id="correu" name="correu" required>
+                </fieldset>
+
+                <!--Votacions de les pel·lícules, sèries i actors-->
+                <!--Aqui en alguns casos el value estara format de paraules amb espais, normalment els valors no els hi ficariem espais, ja que no és gaire recomanat-->
+                <fieldset>
+                    <legend>Votació a millor pel·lícula de l'any</legend>
+                    <div>
+                        <label for="barbie" class="radio-image">
+                            <input type="radio" id="barbie" name="millorPeli" value="Barbie" required>
+                            <img src="fotos/formulari/barbie.jpg" alt="Barbie" title="Barbie">
+                        </label>
+                        <label for="oppenheimer" class="radio-image">
+                            <input type="radio" id="oppenheimer" name="millorPeli" value="Oppenheimer">
+                            <img src="fotos/formulari/oppenheimer.jpg" alt="Oppenheimer" title="Oppenheimer">
+                        </label>
+                        <label for="insidious">
+                            <input type="radio" id="insidious" name="millorPeli" value="Insidious: The Red Door">
+                            <img src="fotos/formulari/insidious.jpg" alt="Insidious" title="Insidious">
+                        </label>
+                        <label for="elemental" class="radio-image">
+                            <input type="radio" id="elemental" name="millorPeli" value="Elemental">
+                            <img src="fotos/formulari/elemental.jpg" alt="Elemental"  title="Elemental">
+                        </label>
+                        <label for="transformers" class="radio-image">
+                            <input type="radio" id="transformers" name="millorPeli" value="Transformers: Rise of the Beasts">
+                            <img src="fotos/formulari/transformers.jpg" alt="Transformers: Rise of the Beasts" title="Transformers: Rise of the Beasts">
+                        </label>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Votació a millor sèrie de l'any</legend>
+                    <div>
+                        <label for="murders" class="radio-image">
+                            <input type="radio" id="murders" name="millorSerie" value="Only Murders in The Building" required>
+                            <img src="fotos/formulari/onlyMurdersInTheBuilding.jpg" alt="Only Murders in The Building"  title="Only Murders in The Building">
+                        </label>
+                        <label for="you" class="radio-image">
+                            <input type="radio" id="you" name="millorSerie" value="You">
+                            <img src="fotos/formulari/you.jpg" alt="You"  title="You">
+                        </label>
+                        <label for="last" class="radio-image">
+                            <input type="radio" id="last" name="millorSerie" value="The Last of Us">
+                            <img src="fotos/formulari/theLastOfUs.jpg" alt="The Last of Us"  title="The Last of Us">
+                        </label>
+                        <label for="beef" class="radio-image">
+                            <input type="radio" id="beef" name="millorSerie" value="Beef">
+                            <img src="fotos/formulari/beef.jpg" alt="Beef"  title="Beef">
+                        </label>
+                        <label for="onePiece" class="radio-image">
+                            <input type="radio" id="onePiece" name="millorSerie" value="One Piece">
+                            <img src="fotos/formulari/onePieceLiveAction.jpg" alt="One Piece"  title="One Piece">
+                        </label>
+                    </div>
+                </fieldset>
+
+                <fieldset class="votacioActors">
+                    <legend>Millors actors i actrius</legend>
+                    <p>Com a màxim 3 votacions</p>
+                    <div>
+                        <input type="checkbox" onchange="limitCheckbox()" class="actors" id="actor1" name="actor1" value="Margot Robbie">
+                        <label for="actor1">Margot Robbie</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" onchange="limitCheckbox()" class="actors" id="actor2" name="actor2" value="Cillian Murphy">
+                        <label for="actor2">Cillian Murphy</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" onchange="limitCheckbox()" class="actors" id="actor3" name="actor3" value="Ty Simpkins">
+                        <label for="actor3">Ty Simpkins</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" onchange="limitCheckbox()" class="actors" id="actor4" name="actor4" value="Leah Lewis">
+                        <label for="actor4">Leah Lewis</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" onchange="limitCheckbox()" class="actors" id="actor5" name="actor5"   value="Anthony Ramos">
+                        <label for="actor5">Anthony Ramos</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" onchange="limitCheckbox()" class="actors" id="actor6" name="actor6" value="Selena Gomez">
+                        <label for="actor6">Selena Gomez</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" onchange="limitCheckbox()" class="actors" id="actor7" name="actor7" value="Bella Ramsey">
+                        <label for="actor7">Bella Ramsey</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" onchange="limitCheckbox()" class="actors" id="actor8" name="actor8" value="Steven Yeun">
+                        <label for="actor8">Steven Yeun</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" onchange="limitCheckbox()" class="actors" id="actor9" name="actor9" value="Inaki Godoy">
+                        <label for="actor9">Iñaki Godoy</label>
+                    </div>
+                </fieldset>
+
+                <!--Política de privacitat-->
+                <div id="checkPolit">
+                    <input type="checkbox" id="politiq" name="politiq" value="acceptaPolitiq" required>
+                    <label for="politiq">Marcant aquesta casella vostè accepta les <a href="politPriv.html" target="_blank">Polítiques de privacitat</a>.*</label>
+                </div>
+                <button type="button" onclick="validacio()">Envia</button>
+            </form>
+        </main>
+        <footer>
+            <!--Informació de les autores-->
+            <p>© Fet per Yuqin Combalia i Yasmin Aoulad. DAM1 - M04. Projecte Web</p>
+        </footer>
+    </body>
+</html>
