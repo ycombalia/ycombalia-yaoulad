@@ -405,7 +405,7 @@ form a{
     justify-content:space-around;
 }
 
-button[type="submit"]{
+button[type="button"]{
     margin:1%;
     width:100%;
     padding:2%;
