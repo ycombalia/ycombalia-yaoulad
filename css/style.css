@@ -453,6 +453,13 @@ button[type="button"]:hover{
         margin: 0;
         border-radius: 0;
     }
+
+    .imatges img{
+    	vertical-align:middle;
+    	height:auto;
+    	width:100%;
+        object-fit:cover;
+    }
     
     /*Selecciona les imatges de les nominacions de pel·lícules i sèries*/
     article article {
