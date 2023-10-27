@@ -113,7 +113,7 @@ function validacio(){
     for (let i =0; i < seriesSeleccionades.length; i++) {
 
         if (seriesSeleccionades[i].checked) {
-            serieVotada = 'i ha votat ' + seriesSeleccionades[i].value + ' com a millor sèrie de l any.';
+            serieVotada = 'i ha votat ' + seriesSeleccionades[i].value + ' com a millor sèrie.';
             series = true;
             break;
         }   
@@ -142,7 +142,7 @@ function validacio(){
     window.alert('Vostè amb nom ' + nom + ' i el correu ' + correu + ', '+ peliVotada + serieVotada + actorsVotats);
     
     //Si tot està complet s'enviarà el formulari.
-    if(actors && pelis && series && nom!='' && email!=''){
+    if(actors && pelis && series && nom!='' && correu!=''){
         document.getElementById('formulari').submit();
     }
 }
