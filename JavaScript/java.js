@@ -46,8 +46,8 @@ let canviAuto = setInterval(mostraImatges, 3000);
 /*____________________________________________Codi del formulari______________________________________*/
 
 /*Declaració i inicialització de la següent funció*/
-    let checkboxes = document.querySelectorAll('.actors');
-    let seleccionats = 0;
+    var checkboxes = document.querySelectorAll('.actors');
+    var seleccionats = 0;
 
 //Funció que limita la selecció dels checkbox dels actors i actores a màxim 3. Es cridarà cada cop que a un checkbox dels actors se li canvï el valor és a dir, cada cop que seleccionis i deselecionis una opció
 function limitCheckbox(){
