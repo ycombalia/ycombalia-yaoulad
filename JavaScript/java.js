@@ -113,7 +113,7 @@ function validacio(){
     for (let i =0; i < seriesSeleccionades.length; i++) {
 
         if (seriesSeleccionades[i].checked) {
-            serieVotada = 'i ha votat ' + seriesSeleccionades[i].value + ' com a millor sèrie de l\'any.';
+            serieVotada = 'i ha votat ' + seriesSeleccionades[i].value + ' com a millor sèrie de l any.';
             series = true;
             break;
         }   
