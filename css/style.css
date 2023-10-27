@@ -364,7 +364,7 @@ input[type="radio"]:checked + img {
 }
 
 /*Fa que el cursor canvi a 'pointer' quan passi pels contenidorsx*/
-div label, input[type="checkbox"] + label, input[type="checkbox"], button[type="submit"]:hover{
+div label, input[type="checkbox"] + label, input[type="checkbox"], button[type="button"]:hover{
     cursor: pointer;
 }
 
@@ -417,7 +417,7 @@ button[type="button"]{
     font-weight:bold;
 }
 
-button[type="submit"]:hover{
+button[type="button"]:hover{
     background-color:#3f3f73;
     color:#f7e359;
 }
@@ -489,8 +489,8 @@ button[type="submit"]:hover{
         width:80%;
     }
     
-    /*Botons d'eliminar i submit*/
-    button[type="submit"]{
+    /*Botons d'eliminar i button*/
+    button[type="button"]{
         width:100%;
     }
 }
