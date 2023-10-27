@@ -132,7 +132,7 @@ function validacio(){
     
     //Comprovació de la votació dels actors, que com a mínim han votat a 1
     if(actorsVotats === ""){
-        actorsVotats= "Ha de votar com a mínim 1 actor.";
+        actorsVotats= " Ha de votar com a mínim 1 actor.";
     }else{
         actorsVotats = " Els actors seleccionats són els següents:" + actorsVotats;
         actors = true;
