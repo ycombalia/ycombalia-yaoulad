@@ -143,5 +143,6 @@ function validacio(){
     //Si tot està complet s'enviarà el formulari.
     if(actors && pelis && series && nom!='' && correu!=''){
         document.getElementById('formulari').submit();
+        window.open("gracies.html", "_blank");
     }
 }
