@@ -13,7 +13,7 @@ function canviImatge(n) {
 
 //Funció que mostrara les imatges
 function mostraImatges(n) {
-    let imatges = document.getElementsByClassName("imatges");
+    let imatges = document.getElementsByClassName('imatges');
 
     //Estructura que controla que n sigui un numero en el qual existeix una imatge a mostrar, en cas contrari se li asignara un nou valor.
     if (n > imatges.length){
@@ -24,7 +24,7 @@ function mostraImatges(n) {
 
     //Amagara totes les imatges una a una amb display none.
     for (let i = 0; i < imatges.length; i++) {
-        imatges[i].style.display = "none";  
+        imatges[i].style.display = 'none';  
     }
 
     //Codi que comprova que numeroImatge no és més gran que imatges.length, per a que no intenti mostrar una imatge que no hi és i per tant que torni a l'inici.
@@ -34,7 +34,7 @@ function mostraImatges(n) {
     }
 
     //Mostra la imatge final!
-    imatges[numeroImatge-1].style.display = "block";
+    imatges[numeroImatge-1].style.display = 'block';
 }
 
 //fa que es canvii les imatges cada 3s
@@ -81,8 +81,8 @@ function limitCheckbox(){
 function validacio(){
     /*Declaració de variants:*/
     /*Aquestes son els que agafaran les dades del formulari per a despres utilitzar-les*/
-    let nom = document.getElementById("nomCognom").value;
-    let correu = document.getElementById("correu").value;
+    let nom = document.getElementById('nomCognom').value;
+    let correu = document.getElementById('correu').value;
     let pelisSeleccionadas = document.getElementsByName('millorPeli');
     let seriesSeleccionades = document.getElementsByName('millorSerie');
     let actorsNominats = document.getElementsByClassName('actors');
@@ -92,14 +92,14 @@ function validacio(){
 
 
     /*Aquestes variants s'inicialitzen...*/
-    let peliVotada = "";
-    let serieVotada="";
-    let actorsVotats="";
+    let peliVotada = '';
+    let serieVotada='';
+    let actorsVotats='';
 
     /*Validació de que l'usuari ha seleccionat com a mínim una peli i una sèrie.*/
     for (let i = 0; i < pelisSeleccionadas.length; i++) {
         if (pelisSeleccionadas[i].checked) {
-            peliVotada = "ha votat " +  pelisSeleccionadas[i].value + " com a millor película, ";
+            peliVotada = 'ha votat ' +  pelisSeleccionadas[i].value + ' com a millor película, ';
             pelis = true;
             break;
         }
@@ -107,13 +107,13 @@ function validacio(){
     
     //En cas que pelis continui sent false, es considerarà que cap película ha estat seleccionada.
     if(!pelis){
-            peliVotada = "ha de votar com a miním una pel·lícula, ";
+            peliVotada = 'ha de votar com a miním una pel·lícula, ';
     }
 
     for (let i =0; i < seriesSeleccionades.length; i++) {
 
         if (seriesSeleccionades[i].checked) {
-            serieVotada = "i ha votat " + seriesSeleccionades[i].value + " com a millor sèrie de l'any.";
+            serieVotada = 'i ha votat ' + seriesSeleccionades[i].value + ' com a millor sèrie de l'any.';
             series = true;
             break;
         }   
@@ -121,20 +121,20 @@ function validacio(){
     
     //En cas que series continui sent false, es considerarà que cap película ha estat seleccionada.
     if(!series){
-        serieVotada = "i ha de votar com a mínim una sèrie.";
+        serieVotada = 'i ha de votar com a mínim una sèrie.';
     }
     
     for(let i=0; i < actorsNominats.length; i++){
         if(actorsNominats[i].checked){
-            actorsVotats = actorsVotats + "\n" + actorsNominats[i].value;
+            actorsVotats = actorsVotats + '\n' + actorsNominats[i].value;
         }
     }
     
     //Comprovació de la votació dels actors, que com a mínim han votat a 1
-    if(actorsVotats === ""){
-        actorsVotats= " Ha de votar com a mínim 1 actor.";
+    if(actorsVotats === ''){
+        actorsVotats= ' Ha de votar com a mínim 1 actor.';
     }else{
-        actorsVotats = " Els actors seleccionats són els següents:" + actorsVotats;
+        actorsVotats = ' Els actors seleccionats són els següents:' + actorsVotats;
         actors = true;
     }
 
@@ -142,7 +142,7 @@ function validacio(){
     window.alert('Vostè amb nom ' + nom + ' i el correu ' + correu + ', '+ peliVotada + serieVotada + actorsVotats);
     
     //Si tot està complet s'enviarà el formulari.
-    if(actors && pelis && series && nom!="" && email!=""){
+    if(actors && pelis && series && nom!='' && email!=''){
         document.getElementById('formulari').submit();
     }
 }
