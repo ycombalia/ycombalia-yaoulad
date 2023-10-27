@@ -49,11 +49,11 @@ let canviAuto = setInterval(mostraImatges, 3000);
 //Funció que limita la selecció dels checkbox dels actors i actores a màxim 3. Es cridarà cada cop que a un checkbox dels actors se li canvï el valor és a dir, cada cop que seleccionis i deselecionis una opció
 function limitCheckbox(){
     /*Declaració i inicialització de les variables*/
-    var checkboxes = document.querySelectorAll('.actors');
-    var seleccionats = 0;
+    let checkboxes = document.querySelectorAll('.actors');
+    let seleccionats = 0;
 
     /*Bucle que recorre tots els chechbox dels autors per a comprovar quants d'aquests estan seleccionats*/
-    for (var i = 0; i <checkboxes.length; i++) {
+    for (let i = 0; i <checkboxes.length; i++) {
         if (checkboxes[i].checked) {
             seleccionats++;
         }
@@ -61,13 +61,13 @@ function limitCheckbox(){
     
     //Condicional que imperdira que votin més de tres actors.
     if (seleccionats >= 3) {
-        for (var i = 0; i <checkboxes.length; i++){
+        for (let i = 0; i <checkboxes.length; i++){
             if (!checkboxes[i].checked) {
                 checkboxes[i].disabled = true;
             }
         }
     }else{ //else que fara tots els checkbox no marcats, disponibles, si l'usuari vol canviar els seus vots
-        for (var i = 0; i <checkboxes.length; i++){
+        for (let i = 0; i <checkboxes.length; i++){
             if (!checkboxes[i].checked) {
                 checkboxes[i].disabled = false;
             }
@@ -81,23 +81,23 @@ function limitCheckbox(){
 function validacio(){
     /*Declaració de variants:*/
     /*Aquestes son els que agafaran les dades del formulari per a despres utilitzar-les*/
-    var nom = document.getElementById("nomCognom").value;
-    var correu = document.getElementById("correu").value;
-    var pelisSeleccionadas = document.getElementsByName('millorPeli');
-    var seriesSeleccionades = document.getElementsByName('millorSerie');
-    var actorsNominats = document.getElementsByClassName('actors');
-    var actors = false;
-    var pelis = false;
-    var series = false;
+    let nom = document.getElementById("nomCognom").value;
+    let correu = document.getElementById("correu").value;
+    let pelisSeleccionadas = document.getElementsByName('millorPeli');
+    let seriesSeleccionades = document.getElementsByName('millorSerie');
+    let actorsNominats = document.getElementsByClassName('actors');
+    let actors = false;
+    let pelis = false;
+    let series = false;
 
 
     /*Aquestes variants s'inicialitzen...*/
-    var peliVotada = "";
-    var serieVotada="";
-    var actorsVotats="";
+    let peliVotada = "";
+    let serieVotada="";
+    let actorsVotats="";
 
     /*Validació de que l'usuari ha seleccionat com a mínim una peli i una sèrie.*/
-    for (var i = 0; i < pelisSeleccionadas.length; i++) {
+    for (let i = 0; i < pelisSeleccionadas.length; i++) {
         if (pelisSeleccionadas[i].checked) {
             peliVotada = "ha votat " +  pelisSeleccionadas[i].value + " com a millor película, ";
             pelis = true;
@@ -110,7 +110,7 @@ function validacio(){
             peliVotada = "ha de votar com a miním una pel·lícula, ";
     }
 
-    for (var i =0; i < seriesSeleccionades.length; i++) {
+    for (let i =0; i < seriesSeleccionades.length; i++) {
 
         if (seriesSeleccionades[i].checked) {
             serieVotada = "i ha votat " + seriesSeleccionades[i].value + " com a millor sèrie de l'any.";
@@ -124,7 +124,7 @@ function validacio(){
         serieVotada = "i ha de votar com a mínim una sèrie.";
     }
     
-    for(var i=0; i < actorsNominats.length; i++){
+    for(let i=0; i < actorsNominats.length; i++){
         if(actorsNominats[i].checked){
             actorsVotats = actorsVotats + "\n" + actorsNominats[i].value;
         }
